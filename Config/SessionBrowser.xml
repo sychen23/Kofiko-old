@@ -4,8 +4,8 @@
 <Config>
     
     <m_strctDirectories
-        m_strDataFolder = "D:\Data\Doris\Electrophys\"
-        m_strAlternativeDataFolder = "D:\Data\Doris\Electrophys\"
+        m_strDataFolder = "C:\Users\Meyer\Documents\GitHub\Kofiko\Logs\"
+        m_strAlternativeDataFolder = "C:\Users\Meyer\Documents\GitHub\Kofiko\Logs\"
     > </m_strctDirectories>
     
     <m_strctChannels
@@ -18,7 +18,7 @@
     
     
     <m_strctDistributedAnalysis
-        m_strJobsFolder = "D:\Data\Doris\Electrophys\Jobs\"
+        m_strJobsFolder = "C:\Users\Meyer\Documents\GitHub\Kofiko\Logs\"
         m_strClusterType = "condor"
         m_strClusterBinaries = "C:\Condor\bin\"
         m_strExecutablePlatform = "win32"

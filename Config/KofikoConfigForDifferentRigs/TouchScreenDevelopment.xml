@@ -10,7 +10,7 @@
 
 <StimulusServer
     SingleComputerMode = "1"
-    PTBScreen = "2"
+    PTBScreen = "1"
     Address = "127.0.0.1"
     Port = "1502"
     VisibleOffset = "40 15 -35 0"

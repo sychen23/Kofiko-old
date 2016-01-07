@@ -4,13 +4,13 @@
 <Config>
 
 <Directories
-   LogFolder = "C:\Shay\Data\Logs\"
-   PTB_Folder = "C:\Shay\Code\PublicLib\PTB\"
+   LogFolder = "C:\Users\Meyer\Documents\GitHub\Kofiko\Logs\"
+   PTB_Folder = "C:\toolbox\Psychtoolbox"
 > </Directories>
 
 <StimulusServer
-    SingleComputerMode = "0"
-    PTBScreen = "2"
+    SingleComputerMode = "1"
+    PTBScreen = "1"
     Address = "192.168.50.94"
     Port = "1502"
 > </StimulusServer>
@@ -47,8 +47,8 @@
 > </VarSave>
 
 <GUIParams
-    PTBScreen = "0"
-    Experimental = "0"
+    PTBScreen = "1"
+    Experimental = "1"
     Debug = "0"
     JuiceMl_To_Ms = "378"
     JuiceTimeMS = "50"

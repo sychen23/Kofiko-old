@@ -102,6 +102,7 @@ elseif strcmpi(g_strctAppConfig.m_strctDAQ.m_strAcqusitionCard,'arduino')
             assert(false);
     end
     
+        
 %     if g_strctDAQParams.m_bMouseGazeEmulator && strcmp(strCommand,'GetAnalog')
 %         try
 %             [x,y] = GetMouse(g_strctPTB.m_iScreenIndex);  % This takes 0.06 ms
@@ -139,7 +140,7 @@ elseif strcmp(g_strctAppConfig.m_strctDAQ.m_strAcqusitionCard,'redbox')
   else
     Out = fnDAQRedBox(strCommand, varargin{:});
   end
-  
+
 end
 
 return;

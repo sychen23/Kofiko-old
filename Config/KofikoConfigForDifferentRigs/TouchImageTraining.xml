@@ -151,6 +151,42 @@
         IncorrectTrialSoundFile = "beep-7.wav"
   > </Paradigm>
 
+<Paradigm Name = "Touch Image Training"
+        Init = "fnParadigmTouchImageInit"
+        Cycle = "fnParadigmTouchImageCycle"
+        Draw = "fnParadigmTouchImageDraw"
+        DrawCycle = "fnParadigmTouchImageDrawCycle"
+        Callbacks = "fnParadigmTouchImageCallbacks"
+        GUI = "fnParadigmTouchImageGUI"
+        Close = "fnParadigmTouchImageClose"
+        ParadigmSwitch = "fnParadigmTouchImageParadigmSwitch"
+    
+        
+        
+        Initial_JuiceTimeMS = "110"
+        Initial_CorrectDistancePix = "75"
+        Initial_InterTrialIntervalMinSec = "0.5"
+        Initial_InterTrialIntervalMaxSec = "1.5"
+        Initial_TrialTimeOutSec = "60"
+        Initial_MaxNumTrials = "1000"
+        Initial_SpotRadius = "50"
+        Initial_MonkeyStartTrial = "0"
+        Initial_MultipleAttempts = "0"
+        Initial_RandomOrder = "0"
+        Initial_RewardBoth = "0"
+	Initial_PenaltySec = "5"
+        
+        Initial_PlayTrialStart = "0"
+        Initial_PlayTrialTimeout = "0"
+        Initial_PlayTrialCorrect = "1"
+        Initial_PlayTrialIncorrect = "0"
+        
+        TrialOnsetSoundFile = "beep-6.wav"
+        TrialTimeoutSoundFile = "beep-10.wav"
+        CorrectTrialSoundFile = "beep-8.wav"
+        IncorrectTrialSoundFile = "beep-7.wav"
+  > </Paradigm>
+
 
   <Paradigm Name = "Touch Force Choice"
         Init = "fnParadigmTouchForceChoiceInit"

@@ -1,1 +1,1 @@
-start "Kofiko" "%MATLAB32BIN%" -nosplash -r "addpath(genpath(pwd())); RegisterGUI"
+start "Kofiko" "%MATLAB32BIN%" -win32 -nosplash -r "addpath(genpath(pwd())); RegisterGUI"

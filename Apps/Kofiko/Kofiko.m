@@ -66,8 +66,8 @@ g_strctAppConfig.m_strLogFileName = g_strLogFileName;
 
 fnLog('Starting Kofiko...');
 if ~fnSetupDAQ()
-    fnShutDown();
-    return;
+   fnShutDown();
+   return;
 end
 
 % Arduino-Intan?
@@ -455,8 +455,8 @@ g_handles.hEyeCalibButton = uicontrol('Style', 'pushbutton', 'String', 'Recenter
 g_handles.hJuiceRewardButton = uicontrol('Style', 'pushbutton', 'String', 'Juice',...
     'Position', [2*iButtonWidth+35 iPanelHeight-iButtonHeight-5 iButtonWidth iButtonHeight], 'parent',g_handles.hControlPanel, 'Callback', @fnJuiceReward);
 
-% g_handles.hJuiceCounter = uicontrol('Style', 'edit', 'String', '0',...
-%     'Position', [3*iButtonWidth+60 iPanelHeight-25 35 18], 'parent',g_handles.hControlPanel, 'Callback', @fnJuiceCounterEdit,'HorizontalAlignment','left');
+g_handles.hJuiceCounter = uicontrol('Style', 'edit', 'String', '0',...
+    'Position', [3*iButtonWidth+60 iPanelHeight-25 35 18], 'parent',g_handles.hControlPanel, 'Callback', @fnJuiceCounterEdit,'HorizontalAlignment','left');
 
 g_handles.hStartButton= uicontrol('Style', 'pushbutton',  'String', 'Start',...
     'Position', [3*iButtonWidth+50 iPanelHeight-iButtonHeight-5 iButtonWidth iButtonHeight], 'Callback', @fnStartParadigmCallback,...
@@ -472,7 +472,7 @@ g_handles.hLastComment = uicontrol('Style', 'text', 'String', 'Last comment:',..
      'Position',[5 iPanelHeight-iButtonHeight-70  iPanelWidth-25 18], 'parent',g_handles.hControlPanel,'HorizontalAlignment','left');
 
  g_handles.hLogLine = uicontrol('Style', 'text', 'String', '123','Position',...
-     [10 aiFigPos(4)-fOffsetY-aiFigPos(2)-30 fOffsetX 18],...
+     [5 iPanelHeight-iButtonHeight-85  iPanelWidth-25 18],...
      'BackgroundColor','r','ForegroundColor','y','parent',g_handles.figure1);
  
 iNumParadigms = length(g_astrctAllParadigms);
@@ -483,13 +483,13 @@ for k=1:iNumParadigms
 end;
 
 g_handles.hText1 = uicontrol('Style', 'text', 'String', 'Paradigm:',...
-    'Position', [5 iPanelHeight-iButtonHeight-90 50 18], 'parent',g_handles.hControlPanel);
+    'Position', [5 iPanelHeight-iButtonHeight-110 50 18], 'parent',g_handles.hControlPanel);
 
 g_handles.hText2 = uicontrol('Style', 'text', 'String', 'was loaded at:',...
-    'position',[5+200 iPanelHeight-iButtonHeight-90 iPanelWidth-215 18],'HorizontalAlignment','left', 'parent',g_handles.hControlPanel);
+    'position',[5+200 iPanelHeight-iButtonHeight-110 iPanelWidth-215 18],'HorizontalAlignment','left', 'parent',g_handles.hControlPanel);
 
 g_handles.hRuntimeStatus = uicontrol('Style', 'text', 'String', 'Cycle Time Info',...
-    'Position', [5 iPanelHeight-iButtonHeight-110 iPanelWidth-25 18], 'parent',g_handles.hControlPanel,'HorizontalAlignment','left');
+    'Position', [5 iPanelHeight-iButtonHeight-150 iPanelWidth-25 18], 'parent',g_handles.hControlPanel,'HorizontalAlignment','left');
 
 % g_handles.hAnnotationButton = uicontrol('Style', 'pushbutton',  'String', 'Annotation',...
 %     'Position', [5 iPanelHeight-2*iButtonHeight-110 iButtonWidth iButtonHeight], 'Callback', {@fnAnnotationCallback,'Visible'},'Parent',g_handles.hControlPanel);
@@ -512,8 +512,8 @@ if g_strctGUIParams.m_fExperimental
         'Position',[3*iButtonWidth+60 iPanelHeight-2*iButtonHeight-110  iButtonWidth-10 20], 'Callback', @fnProfileCycle,'HorizontalAlignment','left','parent',g_handles.hControlPanel);
 end;
 
-aiPos = [80 iPanelHeight-120 100 18];
-
+aiPos = [80 iPanelHeight-iButtonHeight-100 100 18];
+       
 g_handles.hParadigmShift = uicontrol('Style', 'popup',...
        'String', strOptions(2:end),...
        'Position',aiPos,...
@@ -1222,14 +1222,11 @@ if strcmpi(g_strctDAQParams.m_strEyeSignalInput,'Serial')
 end
 
 if isfield(g_strctAppConfig.m_strctDAQ,'m_fAcqusitionCardBoard')
-    bErrorInitializingDAQ = fnDAQWrapper('Init',g_strctAppConfig.m_strctDAQ.m_fAcqusitionCardBoard);
+   fnDAQWrapper('Init',g_strctAppConfig.m_strctDAQ.m_fAcqusitionCardBoard);
 else
-    bErrorInitializingDAQ = fnDAQWrapper('Init',g_strctAppConfig.m_strctDAQ.m_strAcqusitionCardBoard);
+   fnDAQWrapper('Init',g_strctAppConfig.m_strctDAQ.m_strAcqusitionCardBoard);
 end
 
-if bErrorInitializingDAQ
-    return;
-end
 
 
 % [AdvancerPort, ChamberIndex, Hole Index]
