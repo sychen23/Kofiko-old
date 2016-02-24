@@ -1,0 +1,24 @@
+10-Feb-2016 16:56:51:944 Starting Kofiko...
+10-Feb-2016 16:56:51:945 Initializing Data Acqusition Card...
+10-Feb-2016 16:56:52:157 Using PTB toolbox version: 3.0.11
+10-Feb-2016 16:56:52:243 Starting PTB Screen
+10-Feb-2016 16:56:59:048 Initializing Paradigm Default
+10-Feb-2016 16:56:59:085 Switching to paradigm Default
+10-Feb-2016 16:56:59:086 Finite state machine of Default is running, starting from state 0
+10-Feb-2016 16:57:05:098 Closing juice valve
+10-Feb-2016 16:57:05:126 Clearing screen
+10-Feb-2016 16:57:05:127 Initializing Paradigm Touch Pic Training
+10-Feb-2016 16:57:05:160 Switching to paradigm Touch Pic Training
+10-Feb-2016 16:57:05:161 Finite state machine of Touch Pic Training is running, starting from state 0
+10-Feb-2016 16:57:06:872 Starting Touch Pic Training paradigm
+10-Feb-2016 17:01:31:167 Stopping Paradigm
+10-Feb-2016 17:01:31:168 Shutting down
+10-Feb-2016 17:01:31:219 Closing juice valve
+10-Feb-2016 17:01:31:222 Clearing screen
+10-Feb-2016 17:01:31:225 Exitting Kofiko
+10-Feb-2016 17:01:31:226 Closing local PTB Screen
+10-Feb-2016 17:01:31:557 Writing information to disk...
+10-Feb-2016 17:01:31:559 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160210_165649_Rocco.mat
+10-Feb-2016 17:01:31:847 Data Saved!
+10-Feb-2016 17:01:31:847 Closing connection to stimulus server
+10-Feb-2016 17:01:31:849 Closing connection to real time stat server
