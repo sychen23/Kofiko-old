@@ -1,0 +1,50 @@
+01-Feb-2016 16:13:43:187 Starting Kofiko...
+01-Feb-2016 16:13:43:188 Initializing Data Acqusition Card...
+01-Feb-2016 16:13:44:799 Using PTB toolbox version: 3.0.11
+01-Feb-2016 16:13:45:017 Starting PTB Screen
+01-Feb-2016 16:13:52:558 Initializing Paradigm Default
+01-Feb-2016 16:13:52:631 Switching to paradigm Default
+01-Feb-2016 16:13:52:641 Finite state machine of Default is running, starting from state 0
+01-Feb-2016 16:14:18:237 Starting Default paradigm
+01-Feb-2016 16:14:53:243 Closing juice valve
+01-Feb-2016 16:14:53:312 Clearing screen
+01-Feb-2016 16:14:53:315 Initializing Paradigm Touch Screen Training
+01-Feb-2016 16:14:53:406 Switching to paradigm Touch Screen Training
+01-Feb-2016 16:14:53:407 Finite state machine of Touch Screen Training is running, starting from state 0
+01-Feb-2016 16:14:54:740 Starting Touch Screen Training paradigm
+01-Feb-2016 16:20:15:907 Closing juice valve
+01-Feb-2016 16:20:15:911 Clearing screen
+01-Feb-2016 16:20:15:912 Initializing Paradigm Touch Force Choice
+01-Feb-2016 16:20:19:106 Switching to paradigm Touch Force Choice
+01-Feb-2016 16:20:19:106 Finite state machine of Touch Force Choice is running, starting from state 0
+01-Feb-2016 16:20:19:112 Starting Touch Force Choice paradigm
+01-Feb-2016 16:20:33:528 Starting Touch Force Choice paradigm
+01-Feb-2016 16:24:31:182 Started recording
+01-Feb-2016 16:24:34:210 Closing juice valve
+01-Feb-2016 16:24:34:275 Clearing screen
+01-Feb-2016 16:24:34:277 Initializing Stimulus Server for new paradigm
+01-Feb-2016 16:24:34:277 Finished initializing Stimulus Server for new paradigm
+01-Feb-2016 16:24:34:278 Switching to paradigm Touch Screen Training
+01-Feb-2016 16:24:34:279 Finite state machine of Touch Screen Training is running, starting from state 5
+01-Feb-2016 16:24:35:470 Starting Touch Screen Training paradigm
+01-Feb-2016 16:24:35:471 Resuming Touch Screen Training paradigm
+01-Feb-2016 16:25:56:183 Closing juice valve
+01-Feb-2016 16:25:56:184 Clearing screen
+01-Feb-2016 16:25:56:185 Initializing Stimulus Server for new paradigm
+01-Feb-2016 16:25:56:185 Finished initializing Stimulus Server for new paradigm
+01-Feb-2016 16:25:56:185 Switching to paradigm Touch Screen Training
+01-Feb-2016 16:25:56:186 Finite state machine of Touch Screen Training is running, starting from state 5
+01-Feb-2016 16:25:57:093 Starting Touch Screen Training paradigm
+01-Feb-2016 16:25:57:093 Resuming Touch Screen Training paradigm
+01-Feb-2016 16:28:30:758 Stopping recording
+01-Feb-2016 16:28:33:799 Stopping Paradigm
+01-Feb-2016 16:28:33:800 Shutting down
+01-Feb-2016 16:28:33:802 Closing juice valve
+01-Feb-2016 16:28:33:803 Clearing screen
+01-Feb-2016 16:28:34:167 Exitting Kofiko
+01-Feb-2016 16:28:34:197 Closing local PTB Screen
+01-Feb-2016 16:28:34:490 Writing information to disk...
+01-Feb-2016 16:28:34:494 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160201_161338_Rocco.mat
+01-Feb-2016 16:28:34:757 Data Saved!
+01-Feb-2016 16:28:34:757 Closing connection to stimulus server
+01-Feb-2016 16:28:34:759 Closing connection to real time stat server

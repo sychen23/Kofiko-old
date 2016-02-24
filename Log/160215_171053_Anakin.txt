@@ -1,0 +1,40 @@
+15-Feb-2016 17:10:56:216 Starting Kofiko...
+15-Feb-2016 17:10:56:217 Initializing Data Acqusition Card...
+15-Feb-2016 17:10:56:423 Using PTB toolbox version: 3.0.11
+15-Feb-2016 17:10:56:517 Starting PTB Screen
+15-Feb-2016 17:11:02:256 Initializing Paradigm Default
+15-Feb-2016 17:11:02:296 Switching to paradigm Default
+15-Feb-2016 17:11:02:297 Finite state machine of Default is running, starting from state 0
+15-Feb-2016 17:11:08:075 Closing juice valve
+15-Feb-2016 17:11:08:104 Clearing screen
+15-Feb-2016 17:11:08:106 Initializing Paradigm Touch Shapes
+15-Feb-2016 17:11:08:140 Switching to paradigm Touch Shapes
+15-Feb-2016 17:11:08:141 Finite state machine of Touch Shapes is running, starting from state 0
+15-Feb-2016 17:11:09:612 Starting Touch Shapes paradigm
+15-Feb-2016 17:11:33:699 Closing juice valve
+15-Feb-2016 17:11:33:700 Clearing screen
+15-Feb-2016 17:11:33:701 Initializing Stimulus Server for new paradigm
+15-Feb-2016 17:11:33:729 Finished initializing Stimulus Server for new paradigm
+15-Feb-2016 17:11:33:730 Switching to paradigm Default
+15-Feb-2016 17:11:33:731 Finite state machine of Default is running, starting from state 0
+15-Feb-2016 17:11:34:987 Starting Default paradigm
+15-Feb-2016 17:11:45:355 Closing juice valve
+15-Feb-2016 17:11:45:384 Clearing screen
+15-Feb-2016 17:11:45:385 Initializing Paradigm Touch Screen Training
+15-Feb-2016 17:11:45:485 Switching to paradigm Touch Screen Training
+15-Feb-2016 17:11:45:486 Finite state machine of Touch Screen Training is running, starting from state 0
+15-Feb-2016 17:11:46:680 Starting Touch Screen Training paradigm
+15-Feb-2016 17:12:22:415 Starting Touch Screen Training paradigm
+15-Feb-2016 17:13:16:909 Starting Touch Screen Training paradigm
+15-Feb-2016 17:14:33:143 Starting Touch Screen Training paradigm
+15-Feb-2016 17:16:01:917 Stopping Paradigm
+15-Feb-2016 17:16:01:918 Shutting down
+15-Feb-2016 17:16:01:969 Closing juice valve
+15-Feb-2016 17:16:01:974 Clearing screen
+15-Feb-2016 17:16:01:975 Exitting Kofiko
+15-Feb-2016 17:16:01:981 Closing local PTB Screen
+15-Feb-2016 17:16:02:308 Writing information to disk...
+15-Feb-2016 17:16:02:310 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160215_171053_Anakin.mat
+15-Feb-2016 17:16:02:478 Data Saved!
+15-Feb-2016 17:16:02:478 Closing connection to stimulus server
+15-Feb-2016 17:16:02:479 Closing connection to real time stat server

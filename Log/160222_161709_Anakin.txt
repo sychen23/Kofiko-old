@@ -1,0 +1,9 @@
+22-Feb-2016 16:17:11:514 Starting Kofiko...
+22-Feb-2016 16:17:11:514 Initializing Data Acqusition Card...
+22-Feb-2016 16:17:11:715 Using PTB toolbox version: 3.0.11
+22-Feb-2016 16:17:11:730 Closing local PTB Screen
+22-Feb-2016 16:17:11:731 Writing information to disk...
+22-Feb-2016 16:17:11:732 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160222_161709_Anakin.mat
+22-Feb-2016 16:17:11:763 Data Saved!
+22-Feb-2016 16:17:11:764 Closing connection to stimulus server
+22-Feb-2016 16:17:11:766 Closing connection to real time stat server

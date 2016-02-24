@@ -1,0 +1,15 @@
+10-Feb-2016 16:07:16:968 Starting Kofiko...
+10-Feb-2016 16:07:16:969 Initializing Data Acqusition Card...
+10-Feb-2016 16:07:17:177 Using PTB toolbox version: 3.0.11
+10-Feb-2016 16:07:17:266 Starting PTB Screen
+10-Feb-2016 16:07:24:060 Initializing Paradigm Default
+10-Feb-2016 16:07:24:100 Switching to paradigm Default
+10-Feb-2016 16:07:24:106 Finite state machine of Default is running, starting from state 0
+10-Feb-2016 16:07:36:082 Stopping Paradigm
+10-Feb-2016 16:07:36:083 Shutting down
+10-Feb-2016 16:07:36:774 Closing local PTB Screen
+10-Feb-2016 16:07:36:777 Writing information to disk...
+10-Feb-2016 16:07:36:778 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160210_160714_Rocco.mat
+10-Feb-2016 16:07:36:806 Data Saved!
+10-Feb-2016 16:07:36:806 Closing connection to stimulus server
+10-Feb-2016 16:07:36:807 Closing connection to real time stat server
