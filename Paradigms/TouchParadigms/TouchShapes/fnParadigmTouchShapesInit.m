@@ -31,10 +31,13 @@ g_strctParadigm.m_bMonkeyInitiatesTrials = g_strctParadigm.m_fInitial_MonkeyStar
 g_strctParadigm.m_bMultipleAttempts =  g_strctParadigm.m_fInitial_MultipleAttempts;
 g_strctParadigm.m_bToggleRandomOrder =  g_strctParadigm.m_fInitial_RandomOrder;
 g_strctParadigm.m_bRewardBoth =  g_strctParadigm.m_fInitial_RewardBoth;
+<<<<<<< HEAD
 g_strctParadigm.m_fImageArray = ['circle.png'; 'square.png'];
 g_strctParadigm.m_fImageCellArray = cellstr(g_strctParadigm.m_fImageArray);
 disp(g_strctParadigm.m_fImageCellArray);
 
+=======
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
 if ~isempty(g_strctParadigm.m_strCorrectTrialSoundFile) && exist(g_strctParadigm.m_strCorrectTrialSoundFile,'file')
     g_strctParadigm.m_afCorrectSound = wavread(g_strctParadigm.m_strCorrectTrialSoundFile);

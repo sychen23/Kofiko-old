@@ -26,7 +26,11 @@
 
 <RealTimeStatisticsServer
     Address = "192.168.50.96"
+<<<<<<< HEAD
     Port = "4003"    
+=======
+    Port = "4003"
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 > </RealTimeStatisticsServer>
 
 <EyeCalib
@@ -82,7 +86,11 @@
     UseMouseClickAsEyePosition = "0"
     MonitorIndexForEyePosition = "2"
     SimulateTouchScreenForDebug = "0"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
     EyePortX = "0"
     EyePortY = "1"
     EyePortPupil = "2"
@@ -126,7 +134,11 @@
         Close = "fnParadigmFiveDotClose"
         ParadigmSwitch = "fnParadigmFiveDotParadigmSwitch"
         StrobeCodes = "FiveDotStrobeCodes.txt"
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_JuiceTimeMS = "50"
         Initial_JuiceTimeHighMS = "70"
         Initial_BlinkTimeMS = "200"
@@ -141,7 +153,11 @@
         Initial_EyeTracesRefreshMS = "500"
         Initial_EyeTracesBufferSize = "1000"
         Initial_PositiveIncrementPercent = "10"
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
    > </Paradigm>
 
 
@@ -177,7 +193,11 @@
         Initial_StimulusON_MS = "200"
         Initial_StimulusOFF_MS = "200"
         Initial_RandomStimuli = "1"
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_DefaultImageFolder = "\\Kofiko-23B\StimulusSet\"
         Initial_DefaultImageList = "\\Kofiko-23B\StimulusSet\Monkey_Bodyparts\StandardFOB_v2.txt"
         Initial_FavroiteList1 = "\\Kofiko-23B\StimulusSet\Monkey_Bodyparts\StandardFOB_v5_Inv_Edges.txt"
@@ -205,8 +225,13 @@
 
         Initial_ParameterSweep = "0"
 
+<<<<<<< HEAD
    > </Paradigm>   
    
+=======
+   > </Paradigm>
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
 
     <Paradigm Name = "fMRI Block Design"
@@ -219,7 +244,11 @@
         Close = "fnParadigmBlockDesignClose"
         ParadigmSwitch = "fnParadigmBlockDesignParadigmSwitch"
         StrobeCodes = "BlockDesignStrobeCodes.txt"
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
         Initial_GazeBoxPix = "150"
         Initial_JuiceTimeMS = "45"
@@ -272,7 +301,11 @@
         Initial_StimulusSizePix = "128"
         Initial_StimulusON_MS = "100"
         Initial_StimulusOFF_MS = "100"
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         ImageList = "\\Kofiko-23B\StimulusSet\ClassificationImage\faces_objects.txt"
         RandFile = "\\Kofiko-23B\StimulusSet\ClassificationImage\a2fRand_Pink_100x100x6000_Alpha1p2.mat"
 
@@ -294,7 +327,11 @@
         Close = "fnParadigmTargetDetectionClose"
         ParadigmSwitch = "fnParadigmTargetDetectionParadigmSwitch"
         StrobeCodes = "TargetDetectionStrobeCodes.txt"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_DefaultFolder = "\\Kofiko-23B\StimulusSet\"
 
         Initial_JuiceTimeMS = "50"
@@ -334,7 +371,11 @@
         Close = "fnParadigmForcedChoiceClose"
         ParadigmSwitch = "fnParadigmForcedChoiceParadigmSwitch"
         StrobeCodes = "ForcedChoiceStrobeCodes.txt"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_DefaultFolder = "\\Kofiko-23B\StimulusSet\"
 
         Initial_JuiceTimeMS = "50"
@@ -358,7 +399,11 @@
         Initial_DesignFile = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_FacesAndNonFaces.txt"
 
         Initial_FavroiteList1 = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_OnlyOneFace.txt"
+<<<<<<< HEAD
         Initial_FavroiteList2 = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_OnlyNonFace.txt"        
+=======
+        Initial_FavroiteList2 = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_OnlyNonFace.txt"
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_FavroiteList3 = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_OnlyFaces.txt"
         Initial_FavroiteList4 = "\\Kofiko-23B\StimulusSet\ForceChoice\Houdini_Training_FacesAndNonFaces.txt"
 
@@ -372,7 +417,11 @@
 
 
 
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 </Paradigms>
 
 </Config>

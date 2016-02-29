@@ -98,7 +98,11 @@
 
 <Sounds
     AudioDeviceName = "Primary Sound Driver"
+<<<<<<< HEAD
      	
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
     TrialOnsetSoundFile = "beep-6.wav"
     TrialTimeoutSoundFile = "beep-10.wav"
     CorrectTrialSoundFile = "beep-8.wav"
@@ -127,9 +131,15 @@
         GUI = "fnParadigmTouchScreenGUI"
         Close = "fnParadigmTouchScreenClose"
         ParadigmSwitch = "fnParadigmTouchScreenParadigmSwitch"
+<<<<<<< HEAD
     
         
         
+=======
+
+
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_JuiceTimeMS = "110"
         Initial_CorrectDistancePix = "75"
         Initial_InterTrialIntervalMinSec = "0.5"
@@ -139,12 +149,20 @@
         Initial_SpotRadius = "50"
         Initial_MonkeyStartTrial = "0"
         Initial_MultipleAttempts = "0"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_PlayTrialStart = "0"
         Initial_PlayTrialTimeout = "0"
         Initial_PlayTrialCorrect = "1"
         Initial_PlayTrialIncorrect = "0"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         TrialOnsetSoundFile = "beep-6.wav"
         TrialTimeoutSoundFile = "beep-10.wav"
         CorrectTrialSoundFile = "beep-8.wav"
@@ -161,17 +179,27 @@
         GUI = "fnParadigmTouchForceChoiceGUI"
         Close = "fnParadigmTouchForceChoiceClose"
         ParadigmSwitch = "fnParadigmTouchForceChoiceParadigmSwitch"
+<<<<<<< HEAD
         
         
+=======
+
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_PreCueFixationPeriodMS = "300"
         Initial_PreCueFixationSpotSize = "30"
         Initial_PreCueFixationSpotType = "Disc"
         Initial_PreCueFixationRegion = "50"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_CuePeriodMS = "1000"
         Initial_CueMemoryPeriodMS = "1000"
         Initial_AbortTrialIfBreakFixationDuringCue = "1"
         Initial_OverlayPreCueFixation = "1"
+<<<<<<< HEAD
         
         Initial_MemoryPeriodMS = "1000"
         
@@ -183,6 +211,19 @@
         
         
         
+=======
+
+        Initial_MemoryPeriodMS = "1000"
+
+        Initial_InterTrialIntervalMinSec = "0"
+        Initial_InterTrialIntervalMaxSec = "1"
+
+        Initial_TrialTimeoutMS = "10000"
+        Initial_JuiceTimeMS = "50"
+
+
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         Initial_DefaultFolder = "\\touch\StimulusSet\"
         Initial_ExtinguishChoicesAfterSaccade = "1"
         Initial_ShowObjectsAfterSaccadeMS = "500"
@@ -203,7 +244,11 @@
         Initial_StairCaseStepPerc = "0"
         Initial_NoiseFile = "\\Kofiko-23B\StimulusSet\ClassificationImage\a2fRand_Pink_100x100x6000_Alpha1p2.mat"
   > </Paradigm>
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 </Paradigms>
 
 </Config>

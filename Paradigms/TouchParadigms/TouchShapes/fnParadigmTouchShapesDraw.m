@@ -40,7 +40,11 @@ if g_strctParadigm.m_iMachineState > 4
     %Screen(g_strctPTB.m_hWindow,'FillArc',aiColor, aiTouchShapeRect,0,360);
     %Screen(g_strctPTB.m_hWindow,'FrameArc',aiColor, aiValidRect,0,360);
     
+<<<<<<< HEAD
     imageFile = strcat('images/', g_strctParadigm.m_strctCurrentTrial.imageName);
+=======
+    imageFile = 'images/circle.png';
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
     image = imread(imageFile, 'png');
 %     resizedImage = imresize(image, [100 100], 'lanczos3');
 %     Screen('MakeTexture', g_strctPTB.m_hWindow, image, aiValidRect);

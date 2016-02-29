@@ -69,6 +69,14 @@ switch g_strctParadigm.m_iMachineState
         g_strctParadigm.m_strctCurrentTrial.m_pt2fSpotPos_Red = [fSpotX, fSpotY];
         g_strctParadigm.m_strctCurrentTrial.m_fSpotRad = fSpotSizePix;
         
+<<<<<<< HEAD
+=======
+        % Randomly present image
+        imageArray = {'circle.png', 'square.png'};
+        g_strctParadigm.m_strctCurrentTrial.imageName = imageArray(round(rand(1)*1) + 1);
+
+
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
         % Chance swap coordinate positions of the dots if set to random
         if g_strctParadigm.m_bToggleRandomOrder
             if rand() > 0.5
@@ -77,6 +85,7 @@ switch g_strctParadigm.m_iMachineState
                 g_strctParadigm.m_strctCurrentTrial.m_pt2fSpotPos_Red = tempxy;
             end
         end
+<<<<<<< HEAD
         
         % assign a random image to be the next one. Check if the new image
         % matches the old one.
@@ -89,6 +98,8 @@ switch g_strctParadigm.m_iMachineState
         g_strctParadigm.m_strctCurrentTrial.imageName = imageArray(round(rand(1)*1) + 1, :);
         g_strctParadigm.m_strctCurrentTrial.matchingImage = ~strcmp(g_strctParadigm.m_strctCurrentTrial.lastImageName, ...
             g_strctParadigm.m_strctCurrentTrial.imageName)
+=======
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
 
         if ~g_strctParadigm.m_bMonkeyInitiatesTrials
@@ -123,16 +134,23 @@ switch g_strctParadigm.m_iMachineState
           g_strctParadigm.m_strctStatistics.m_iNumTrials = g_strctParadigm.m_strctStatistics.m_iNumTrials + 1;
 
           % Send a command to display the spot on the stimulus server
+<<<<<<< HEAD
           % Randomly present image
 
+=======
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
           fFlipTime = fnDrawTwoSpotsAndShapeOnStimulusScreen(g_strctParadigm.m_strctCurrentTrial.m_pt2fSpotPos_Red, ...
                                      g_strctParadigm.m_strctCurrentTrial.m_pt2fSpotPos_Green, ...
                                      g_strctParadigm.m_strctCurrentTrial.m_pt2fShapePos,...
                                      g_strctParadigm.m_strctCurrentTrial.m_fSpotRad, ...
                                      g_strctParadigm.m_strctCurrentTrial.m_fImageRad, ...
                                      [255 0 0], [0 255 0], [255 255 0], ...
+<<<<<<< HEAD
                                      g_strctParadigm.m_strctCurrentTrial.imageName,...
                                      g_strctParadigm.m_strctCurrentTrial.matchingImage);
+=======
+                                     g_strctParadigm.m_strctCurrentTrial.imageName);
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
            g_strctParadigm.m_strctCurrentTrial.m_fSpotOnset_TS = fFlipTime;
            fnParadigmToKofikoComm('CriticalSectionOn');
@@ -244,6 +262,7 @@ return;
 
 % Draws two spots with specified different positions and colors but same size.
 function fFlipTime = fnDrawTwoSpotsAndShapeOnStimulusScreen(pt2iSpot_A, pt2iSpot_B, pt2iShape, ...
+<<<<<<< HEAD
   fSpotSizePix, fShapeSizePix, aiColor_A, aiColor_B, aiColor_shape, imageName, matchingImage)
     global g_strctStimulusServer
     if matchingImage
@@ -253,6 +272,14 @@ function fFlipTime = fnDrawTwoSpotsAndShapeOnStimulusScreen(pt2iSpot_A, pt2iSpot
         aiTouchSpotRect = [pt2iSpot_B(:)-fSpotSizePix;pt2iSpot_B(:)+fSpotSizePix];
         Screen(g_strctStimulusServer.m_hWindow,'FillArc',aiColor_B, aiTouchSpotRect,0,360);
     end
+=======
+  fSpotSizePix, fShapeSizePix, aiColor_A, aiColor_B, aiColor_shape, imageName)
+    global g_strctStimulusServer
+    aiTouchSpotRect = [pt2iSpot_A(:)-fSpotSizePix;pt2iSpot_A(:)+fSpotSizePix];
+    Screen(g_strctStimulusServer.m_hWindow,'FillArc',aiColor_A, aiTouchSpotRect,0,360);
+    aiTouchSpotRect = [pt2iSpot_B(:)-fSpotSizePix;pt2iSpot_B(:)+fSpotSizePix];
+    Screen(g_strctStimulusServer.m_hWindow,'FillArc',aiColor_B, aiTouchSpotRect,0,360);
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
     aiTouchShapeRect = [pt2iShape(:)-fShapeSizePix;pt2iShape(:)+fShapeSizePix];
     imageFile = strcat('images/', imageName);
     image = imread(imageFile, 'png');
@@ -283,8 +310,12 @@ function fnDoOnCorrect(fCurrTime)
                                      g_strctParadigm.m_strctCurrentTrial.m_fSpotRad, ...
                                      g_strctParadigm.m_strctCurrentTrial.m_fImageRad, ...
                                      [255 0 0], [0 255 0], [255 255 0],...
+<<<<<<< HEAD
                                      g_strctParadigm.m_strctCurrentTrial.imageName,...
                                      g_strctParadigm.m_strctCurrentTrial.matchingImage);
+=======
+                                     g_strctParadigm.m_strctCurrentTrial.imageName);
+>>>>>>> 4b6f317a9ada562988f3b3c0bd075d12bd7f449b
 
     fJuiceTimeMS = fnTsGetVar(g_strctParadigm, 'JuiceTimeMS');
     fnParadigmToKofikoComm('Juice',  fJuiceTimeMS);
