@@ -7,7 +7,7 @@ function Kofiko(strXMLConfigFileName, strctRegisterConfig)
 % Kofiko entry point
 clear global
 global g_hLogFileID g_bVERBOSE g_bAppIsRunning g_bSIMULATE
-global g_bLastLoggedList g_strctStimulusServer g_bRecording 
+global g_bLastLoggedList g_strctStimulusServer g_bRecording
 global g_astrctAllParadigms g_iCurrParadigm g_abParadigmInitialized
 global g_strctAppConfig g_strctSystemCodes g_iNextParadigm g_strLogFileName g_strctPTB g_strctAcquisitionServer
 
@@ -93,10 +93,10 @@ end;
 iAgressiveMode = 0; % Should be 4, once we get the soundblaster card...
 try
     g_strctPTB.m_hAudioDevice = PsychPortAudio('Open',astrctAudioDevices(iDeviceIndex).DeviceIndex,1,iAgressiveMode, 44100,2);
-    
+
 catch
     g_strctPTB.m_hAudioDevice = [];
-    
+
 end
 
 
@@ -117,19 +117,19 @@ if g_strctAppConfig.m_strctStimulusServer.m_fSingleComputerMode
     g_strctStimulusServer.m_fRefreshRateHz = fRefreshRate;
     g_strctStimulusServer.m_fRefreshRateMS = 1/fRefreshRate*1000;
     g_strctStimulusServer.m_bConnected = true;
-    
+
 else
-    
+
     % Establih a connection to the stimulus machine
     fnSetupConnectionToStimulusServer(...
         g_strctAppConfig.m_strctStimulusServer.m_strAddress,...
         g_strctAppConfig.m_strctStimulusServer.m_fPort);
-    
+
     if isempty(g_strctStimulusServer)
          fnShutDown();
         fnLog('CRITICAL ERROR: Could not connect to stimulus server...');
         fprintf('CRITICAL ERROR: Could not connect to stimulus server...\n');
-       
+
         return;
     end;
 end
@@ -156,9 +156,9 @@ g_bAppIsRunning = true;
 g_bRecording = false;
 g_iCurrParadigm = 1; % probably the "deafult" paradigm
 g_abParadigmInitialized = zeros(1,length(g_astrctAllParadigms));
-% drawnow 
+% drawnow
 % figure(g_handles.figure1);
-% drawnow 
+% drawnow
 
 while (g_bAppIsRunning)
     fnRunParadigm();
@@ -203,7 +203,7 @@ if isfield(g_strctAppConfig,'m_strctSounds')
     end
     acSoundFileNames = acSoundFileNames(abExist);
     acSoundNames = acSoundNames(abExist);
-  
+
     if fnParadigmToKofikoComm('IsTouchMode')
         % Load sounds locally
         g_strctSoundMedia.m_acSounds = fnLoadSoundsAux(acSoundFileNames,acSoundNames);
@@ -213,7 +213,7 @@ if isfield(g_strctAppConfig,'m_strctSounds')
     end
 
   fprintf('Load sounds Done.\n');
-      
+
 else
     g_strctSoundMedia.m_acSounds = [];
 end
@@ -231,7 +231,7 @@ end
 
 
 function fnRegisterAdvancers()
-global g_strctDAQParams 
+global g_strctDAQParams
 iNumAdvancers = length(g_strctDAQParams.m_a2iAdvancerMappingToChamberHole);
 %if iNumAdvancers > 0
     fndllMiceHook('Init');
@@ -251,7 +251,7 @@ if ~g_strctCycle.m_bParadigmPaused
     g_strctGUIParams.m_bUserPaused = true;
     fnPauseParadigm();
 else
-    g_strctGUIParams.m_bUserPaused = false;    
+    g_strctGUIParams.m_bUserPaused = false;
     fnResumeParadigm();
 end;
 return;
@@ -274,7 +274,7 @@ g_strctSpikeServer.m_iListenSocket = udp_mslisten(fLocalListenUDP_Port);
 return;
 
 
-  
+
 function fnConnectToAcquisitionServer()
 global g_strctAcquisitionServer  g_strctAppConfig
 g_strctAcquisitionServer.m_bConnected = false;
@@ -284,7 +284,7 @@ end
 fnLog('Trying to setup a TCP/IP connection with Kofiko-Intan');
 if ~isfield(g_strctAppConfig.m_strctAcquisitionServer,'m_strAddress') && ...
         isempty(g_strctAppConfig.m_strctAcquisitionServer.m_strAddress)
-   
+
 g_strctAcquisitionServer.m_bConnected = false;
 g_strctAcquisitionServer.m_iSocket = [];
 return;
@@ -297,7 +297,7 @@ fndllZeroMQ_Wrapper('Send',g_strctAcquisitionServer.m_iSocket,['SetSessionName '
 g_strctAcquisitionServer.m_bConnected = true;
 return
 
-  
+
 function fnConnectToRealTimeStatServer()
 global g_strctRealTimeStatServer g_bVERBOSE g_strctAppConfig
 if ~isfield(g_strctAppConfig,'m_strctRealTimeStatisticsServer')
@@ -311,7 +311,7 @@ fnLog('Trying to setup a TCP/IP connection with the real time statistics server'
 if ~isfield(g_strctAppConfig.m_strctRealTimeStatisticsServer,'m_strAddress') && ...
         isempty(g_strctAppConfig.m_strctRealTimeStatisticsServer.m_strAddress) || ...
     ~isfield(g_strctAppConfig.m_strctRealTimeStatisticsServer,'m_fPort')
-    
+
 g_strctRealTimeStatServer.m_bConnected = false;
 g_strctRealTimeStatServer.m_iSocket = [];
 return;
@@ -332,7 +332,7 @@ return;
 
 
 function bSuccessful = fnSetupConnectionToStimulusServer(strStimulusServerIP, iStimulusServerPort)
-global g_strctStimulusServer g_bVERBOSE 
+global g_strctStimulusServer g_bVERBOSE
 % Connect to Stimulus Server
 bSuccessful = false;
 bBefore = g_bVERBOSE ;
@@ -341,7 +341,7 @@ g_bVERBOSE = true;
 fnLog('Trying to setup a connection with the stimulus server');
 
 iTimeOutSec  = 5;
-g_strctStimulusServer.m_iSocket = msconnect(strStimulusServerIP, iStimulusServerPort, iTimeOutSec); 
+g_strctStimulusServer.m_iSocket = msconnect(strStimulusServerIP, iStimulusServerPort, iTimeOutSec);
 if g_strctStimulusServer.m_iSocket < 0
     g_strctStimulusServer = [];
     return;
@@ -352,7 +352,7 @@ fnLog('Connection established');
 fnLog('Starting PTB on stimulus server');
 
 fnParadigmToStimulusServer('StartPTB');
-   
+
 iTimeOutSec = 15;
 
 acResponse1 = msrecv(g_strctStimulusServer.m_iSocket,iTimeOutSec);
@@ -467,14 +467,14 @@ g_handles.hCommentEdit = fnMyUIControlEdit('Style', 'edit', 'String', 'Enter a c
 
 g_handles.hLastComment = uicontrol('Style', 'text', 'String', 'Last comment:',...
      'Position',[5 iPanelHeight-iButtonHeight-55 iPanelWidth-25 18], 'parent',g_handles.hControlPanel);%, 'Callback', @fnCommentEdit,'HorizontalAlignment','left');
- 
+
  g_handles.hText4 = uicontrol('Style', 'text', 'String', ['Log file: ',g_strLogFileName],...
      'Position',[5 iPanelHeight-iButtonHeight-70  iPanelWidth-25 18], 'parent',g_handles.hControlPanel,'HorizontalAlignment','left');
 
  g_handles.hLogLine = uicontrol('Style', 'text', 'String', '123','Position',...
      [5 iPanelHeight-iButtonHeight-85  iPanelWidth-25 18],...
      'BackgroundColor','r','ForegroundColor','y','parent',g_handles.figure1);
- 
+
 iNumParadigms = length(g_astrctAllParadigms);
 
 strOptions='';
@@ -506,14 +506,13 @@ g_handles.hUserTSButton = uicontrol('Style', 'pushbutton',  'String', 'User TS',
      'Position', [3*iButtonWidth+50 iPanelHeight-2*iButtonHeight-110 10+iButtonWidth-15 iButtonHeight], 'Callback', @fnUserTSCallback,...
      'parent',g_handles.hControlPanel);
 
- 
+
 if g_strctGUIParams.m_fExperimental
     g_handles.m_hProfileButton= uicontrol('Style', 'pushbutton', 'String', 'Profile',...
         'Position',[3*iButtonWidth+60 iPanelHeight-2*iButtonHeight-110  iButtonWidth-10 20], 'Callback', @fnProfileCycle,'HorizontalAlignment','left','parent',g_handles.hControlPanel);
 end;
 
 aiPos = [80 iPanelHeight-iButtonHeight-100 100 18];
-       
 g_handles.hParadigmShift = uicontrol('Style', 'popup',...
        'String', strOptions(2:end),...
        'Position',aiPos,...
@@ -538,7 +537,7 @@ g_handles.m_strctSettingsPanel.m_hGainYText = uicontrol('Style', 'text', 'String
      'Position',[5 iLowerPanelHeight-60-5 60 20], 'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 g_handles.m_strctSettingsPanel.m_hGainY = uicontrol('Style', 'edit', 'String', num2str(fnTsGetVar(g_strctEyeCalib,'GainY')),...
      'Position',[70 iLowerPanelHeight-60 60 20], 'Callback', {@fnSettingsCallback,'GainY'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
- 
+
 
  g_handles.m_strctSettingsPanel.hJuiceRewardText = uicontrol('Style', 'text', 'String', 'Juice Time (ms)',...
      'Position',[5 iLowerPanelHeight-95 80 20],'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
@@ -564,28 +563,28 @@ g_handles.m_strctSettingsPanel.m_hMotionResumeAfterEdit= uicontrol('Style', 'edi
 g_handles.m_strctSettingsPanel.m_hMotionValue = uicontrol('Style', 'text', 'String', 'Motion Value:',...
      'Position',[5 iLowerPanelHeight-205 350 20], 'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
- 
-% 
+
+%
 % g_handles.m_strctSettingsPanel.m_hAvgStartMSText = uicontrol('Style', 'text', 'String', 'PSTH Average Window Start (ms):',...
 %      'Position',[5 iLowerPanelHeight-500 175 20], 'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
-% 
+%
 % g_handles.m_strctSettingsPanel.m_hAvgStartMSEdit= uicontrol('Style', 'edit', 'String', num2str(g_strctGUIParams.m_fPSTHStartAvgAfterOnsetMS),...
 %      'Position',[240+10 iLowerPanelHeight-500 60 20], 'Callback', {@fnSettingsCallback,'PSTH_StartMS'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
-% 
+%
 % g_handles.m_strctSettingsPanel.m_hAvgEndMSText = uicontrol('Style', 'text', 'String', 'PSTH Average Window End (ms):',...
 %      'Position',[5 iLowerPanelHeight-525 175 20], 'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
-%  
+%
 % g_handles.m_strctSettingsPanel.m_hAvgEndMSEdit= uicontrol('Style', 'edit', 'String', num2str(g_strctGUIParams.m_fPSTHEndAvgAfterOnsetMS),...
 %      'Position',[240+10 iLowerPanelHeight-525 60 20], 'Callback', {@fnSettingsCallback,'PSTH_EndMS'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
- 
- 
+
+
 g_handles.m_strctSettingsPanel.m_hConnectToRealTimeStatServer = uicontrol('Style', 'pushbutton', 'String', 'Connect To Real-Time Statistics Server',...
      'Position',[10 iLowerPanelHeight-455 200 30], 'Callback', {@fnSettingsCallback,'ConnectToRealTimeStatServer'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
  g_handles.m_strctSettingsPanel.m_hConnectToRealTimeStatServer = uicontrol('Style', 'pushbutton', 'String', 'Reconnect To Stimulus Server Server',...
      'Position',[10 iLowerPanelHeight-500 200 30], 'Callback', {@fnSettingsCallback,'ReconnectToStimulusServer'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
- 
+
  g_handles.m_strctSettingsPanel.m_hTogglePTBScreen = uicontrol('Style', 'pushbutton', 'String', 'Toggle PTB Screen',...
      'Position',[10 iLowerPanelHeight-400 150 30], 'Callback', {@fnSettingsCallback,'TogglePTBScreen'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
@@ -597,17 +596,17 @@ g_handles.m_strctSettingsPanel.m_hConnectToRealTimeStatServer = uicontrol('Style
 
 g_handles.m_strctSettingsPanel.m_hStatPrint= uicontrol('Style', 'pushbutton', 'String', 'FlipThreadUsage',...
      'Position',[0 iLowerPanelHeight-250 100 30], 'Callback', {@fnSettingsCallback,'FlipThreadUsage'},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
- 
- 
- 
+
+
+
   g_handles.m_strctSettingsPanel.m_hMouseEmulator = uicontrol('Style','checkbox','String','Mouse Gaze Emulator',...
      'Position',[10 iLowerPanelHeight-550 200 30],'HorizontalAlignment','Left','Parent',...
     g_handles.m_strctSettingsPanel.m_hPanel,'Callback',{@fnSettingsCallback,'EmulateGaze'},'value',false);
- 
+
 g_handles.m_strctSettingsPanel.m_hDisableSpecialKeys = uicontrol('Style','checkbox','String','Disable Special Keys',...
      'Position',[10 iLowerPanelHeight-580 200 30],'HorizontalAlignment','Left','Parent',...
     g_handles.m_strctSettingsPanel.m_hPanel,'Callback',{@fnSettingsCallback,'ToggleSpecialKeys'},'value',false);
- 
+
 
 g_handles.m_strctSettingsPanel.m_hMicroStimCh1 = uicontrol('Style','pushbutton','String','Microstim Pulse (Ch1)',...
      'Position',[10 iLowerPanelHeight-620 150 30],'HorizontalAlignment','Left','Parent',...
@@ -616,10 +615,10 @@ g_handles.m_strctSettingsPanel.m_hMicroStimCh1 = uicontrol('Style','pushbutton',
 g_handles.m_strctSettingsPanel.m_ahMicroStimAmpEdit(1) = uicontrol('Style', 'edit', 'String', '',...
      'Position',[10 iLowerPanelHeight-660 60 20], 'Callback', {@fnSettingsCallback,'MicrostimAmplitude',1},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
- 
+
 g_handles.m_strctSettingsPanel.m_ahMicroStimSrcEdit(1) = uicontrol('Style', 'edit', 'String', '',...
      'Position',[10 iLowerPanelHeight-690 60 20], 'Callback', {@fnSettingsCallback,'MicrostimSource',1},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
- 
+
  g_handles.m_strctSettingsPanel.m_ahMicroStimSrcEdit(2) = uicontrol('Style', 'edit', 'String', '',...
      'Position',[170 iLowerPanelHeight-690 60 20], 'Callback', {@fnSettingsCallback,'MicrostimSource',2},'HorizontalAlignment','left','parent',g_handles.m_strctSettingsPanel.m_hPanel);
 
@@ -643,9 +642,9 @@ g_handles.m_strctSettingsPanel.m_hMicroStimGUI = uicontrol('Style','pushbutton',
 
 % g_handles.m_strctSettingsPanel.m_hMotionAxes = ...
 %     axes('units','pixels','position',[40 iLowerPanelHeight-300-30 iPanelWidth-70 100],'Parent',g_handles.m_strctSettingsPanel.m_hPanel);
- 
+
 set(g_handles.m_strctSettingsPanel.m_hPanel,'visible','off');
- 
+
 
 %% TS Panel
 
@@ -778,8 +777,8 @@ set( g_handles.hTSNameEdit,'string',g_strctAppConfig.m_astrctUserTS(iSelected).m
 
 return;
 
- 
- 
+
+
 function fnResetStatForSelectedUnits()
 return;
 
@@ -815,21 +814,21 @@ if 0
     if isempty(g_strctStimulusServer)
         return;
     end;
-    
+
     if ~g_strctCycle.m_bParadigmPaused
         fnPauseParadigm();
         bPaused = true;
     end
-    
+
     iPlexonSocket = msconnect(g_strctAppConfig.m_strctPlexonServer.m_strAddress, g_strctAppConfig.m_strctPlexonServer.m_fPort);
     if iPlexonSocket < 0
         fnLog('Could not connect to plexon computer');
     else
-        
+
         if ~isempty(g_iCurrParadigm ) && g_iCurrParadigm > 0
             g_astrctAllParadigms{g_iCurrParadigm} = g_strctParadigm;
         end;
-        
+
         strctKofiko.g_astrctAllParadigms = g_astrctAllParadigms;
         strctKofiko.g_strctAppConfig = g_strctAppConfig;
         strctKofiko.g_strctSystemCodes = g_strctSystemCodes;
@@ -898,7 +897,7 @@ switch strEventType
              if isfield(g_strctParadigm,'m_strctControllers') && isfield(g_strctParadigm.m_strctControllers,'m_hPanel')
                 set(g_strctParadigm.m_strctControllers.m_hPanel,'visible','off')
             end;
-            
+
             fGainX = fnTsGetVar(g_strctEyeCalib,'GainX');
             fGainY = fnTsGetVar(g_strctEyeCalib,'GainY');
             set(g_handles.m_strctSettingsPanel.m_hGainX,'string',num2str(fGainX));
@@ -907,14 +906,14 @@ switch strEventType
 
 %             set(g_handles.m_strctSettingsPanel.m_hAvgStartMSEdit, 'String', num2str(g_strctGUIParams.m_fPSTHStartAvgAfterOnsetMS));
 %             set(g_handles.m_strctSettingsPanel.m_hAvgEndMSEdit ,'String',  num2str(g_strctGUIParams.m_fPSTHEndAvgAfterOnsetMS));
-%             
+%
 %             iNumElectrodes = length(g_strctAppConfig.m_strctElectrophysiology.m_astrctElectrodes);
 %             for k=1:iNumElectrodes
 %                 fCurrDepthMM = g_strctAppConfig.m_strctElectrophysiology.m_astrctElectrodes(k).Depth.Buffer(...
 %                     g_strctAppConfig.m_strctElectrophysiology.m_astrctElectrodes(k).Depth.BufferIdx);
 %                 set(g_handles.m_strctSettingsPanel.m_hCurrentDepthEdit(k),'string',num2str(fCurrDepthMM));
 %             end;
-%             
+%
             g_strctGUIParams.m_bSettingsPanelOn = true;
         else
             set(g_handles.m_strctSettingsPanel.m_hPanel,'visible','off')
@@ -923,7 +922,7 @@ switch strEventType
             end;
             g_strctGUIParams.m_bSettingsPanelOn = false;
         end
-        
+
 %     case 'PSTH_StartMS'
 %         strTemp = get(g_handles.m_strctSettingsPanel.m_hAvgStartMSEdit,'string');
 %         fStartMS = str2num(strTemp);
@@ -940,7 +939,7 @@ switch strEventType
 %         else
 %             set(g_handles.m_strctSettingsPanel.m_hAvgEndMSEdit,'string',num2str(g_strctGUIParams.m_fPSTHEndAvgAfterOnsetMS));
 %         end;
-        
+
     case 'GainX'
         strTemp = get(g_handles.m_strctSettingsPanel.m_hGainX,'string');
         fGainX = str2num(strTemp);
@@ -973,7 +972,7 @@ switch strEventType
         if g_strctAcquisitionServer.m_bConnected
             fndllZeroMQ_Wrapper('Send',g_strctAcquisitionServer.m_iSocket,['flip_thread_usage']);
         end
-  
+
     case 'MotionThreshold'
         strTemp = get(g_handles.m_strctSettingsPanel.m_hMotionThresholdEdit,'string');
         fMotionThreshold = str2num(strTemp);
@@ -981,7 +980,7 @@ switch strEventType
             g_strctGUIParams.m_fMotionThreshold = fMotionThreshold;
             fnLog('Setting new motion threshold to %.2f', fMotionThreshold);
         end;
-        
+
     case 'MotionPauseAfterSec'
         strTemp = get(g_handles.m_strctSettingsPanel.hMotionPauseAfterEdit,'string');
         fPauseSec = str2num(strTemp);
@@ -989,7 +988,7 @@ switch strEventType
             g_strctGUIParams.m_fPauseTaskAfterMotionSec = fPauseSec;
             fnLog('Paradigm will pause after monkey moves for at least %.2f sec', fPauseSec);
         end;
-        
+
     case 'MotionResumeAfterSec'
         strTemp = get(g_handles.m_strctSettingsPanel.m_hMotionResumeAfterEdit,'string');
         fResumeSec = str2num(strTemp);
@@ -1016,19 +1015,19 @@ switch strEventType
             afAmplitudes(iHandle) = fAmplitude;
             g_strctDAQParams = fnTsSetVar(g_strctDAQParams,'MicroStimAmplitude',afAmplitudes);
         end
-        
+
     case 'MicrostimSource'
         iHandle = varargin{1};
-        
+
             acSources = fnTsGetVar(g_strctDAQParams,'MicroStimSource');
             acSources{iHandle} = get(g_handles.m_strctSettingsPanel.m_ahMicroStimSrcEdit(iHandle),'String');
             g_strctDAQParams = fnTsSetVar(g_strctDAQParams,'MicroStimSource',acSources);
-        
+
     case 'MicroStimPulse'
         aiChannels = varargin{1};
-        
+
        afAmplitudes = fnTsGetVar(g_strctDAQParams,'MicroStimAmplitude');
-        
+
         for k=1:length(aiChannels)
             fnParadigmToKofikoComm('StimulationTTL',aiChannels(k),afAmplitudes(aiChannels(k)));
         end
@@ -1040,10 +1039,10 @@ end
 
 return;
 
-% 
+%
 % function fnAnnotationCallback(hObject, a, strEventType)
 % global g_strctParadigm g_handles  g_strctGUIParams
-% 
+%
 % switch strEventType
 %     case 'Visible'
 %         bVisible = strcmpi(get(g_handles.m_strctStatisticsPanel.m_hPanel,'visible'),'on');
@@ -1063,7 +1062,7 @@ return;
 %             g_strctGUIParams.m_bStatisticsPanelOn = false;
 %         end
 % end
-% 
+%
 % return;
 
 
@@ -1092,7 +1091,7 @@ return;
 
 
 function fnCloseKofiko(a,b)
-global g_bParadigmRunning g_bAppIsRunning 
+global g_bParadigmRunning g_bAppIsRunning
 if g_bAppIsRunning
     g_bParadigmRunning = false;
     g_bAppIsRunning = false;
@@ -1116,12 +1115,12 @@ if isfield(g_strctAppConfig,'m_strctElectrophysiology')
                 g_strctAppConfig.m_strctElectrophysiology(iChamberIter).m_astrctGrids(1) = rmfield(...
                     g_strctAppConfig.m_strctElectrophysiology(iChamberIter).m_astrctGrids(1),'m_astrctDepth');
             end
-            
+
         else
             aiActiveElectrodes = [];
             iNumActiveElectrodes  = 0;
         end
-           
+
         for k=1:iNumActiveElectrodes
             strctTmp = ...
                 fnTsAddVar([], 'Depth', ...
@@ -1148,7 +1147,7 @@ g_strctGUIParams.m_iJuiceCounter = 0;
 g_strctGUIParams.m_fJuiceTimeOpenTotalMS = 0;
 g_strctGUIParams.m_bStatisticsPanelOn = false;
 g_strctGUIParams.m_bSettingsPanelOn = false;
-g_strctGUIParams.m_bUserPaused = false;    
+g_strctGUIParams.m_bUserPaused = false;
 g_strctGUIParams.m_bDisplayPTB = true;
 
 g_strctGUIParams.m_iActiveElectrode = 1;
@@ -1186,11 +1185,11 @@ if g_strctAppConfig.m_strctVarSave.m_fEyePos
 end;
 
 return;
-    
+
 
 function bOK = fnSetupDAQ()
 bOK  = false;
-global g_strctDAQParams  g_strctAppConfig   g_strctRecordingInfo 
+global g_strctDAQParams  g_strctAppConfig   g_strctRecordingInfo
 strLogLine = fnLog('Initializing Data Acqusition Card...');
 %set(g_handles.hLogLine,'String',strLogLine);
 drawnow
@@ -1205,7 +1204,7 @@ g_strctDAQParams = fnTsAddVar(g_strctDAQParams,'MicroStimSource',{'Manual','Manu
 if ~isfield(g_strctDAQParams,'m_strEyeSignalInput')
     g_strctDAQParams.m_strEyeSignalInput = 'Analog';
 end
-if strcmpi(g_strctDAQParams.m_strEyeSignalInput,'Serial') 
+if strcmpi(g_strctDAQParams.m_strEyeSignalInput,'Serial')
     if ~isfield(g_strctDAQParams,'m_strEyeSignalSerialCOM')
         fprintf('Missing Entry in XML (EyeSignalSerialCOM) under the DAQ block to specify COM port for ISCAN\n');
         return;
@@ -1216,7 +1215,7 @@ if strcmpi(g_strctDAQParams.m_strEyeSignalInput,'Serial')
         fprintf('Error initializing serial port with IOPort\n');
         return;
     end;
-    % Turn on saving of eye signal... 
+    % Turn on saving of eye signal...
     g_strctAppConfig.m_strctVarSave.m_fEyePos  = 1;
     g_strctDAQParams.m_bUseEyePosSerial = true;
 end
@@ -1228,9 +1227,8 @@ else
 end
 
 
-
 % [AdvancerPort, ChamberIndex, Hole Index]
- 
+
 iNumExternalTriggers = length(g_strctDAQParams.m_afExternalTriggers);
 iExternalTriggerBufferSize = 5000;
 for k=1:iNumExternalTriggers
@@ -1305,14 +1303,14 @@ if fAvailWidth > g_strctStimulusServer.m_aiScreenSize(3) && ...
 else
     fXScale = fAvailWidth /  g_strctStimulusServer.m_aiScreenSize(3);
     fYScale = fAvailHeight / g_strctStimulusServer.m_aiScreenSize(4);
-    
+
     fScale = min(fXScale,fYScale);
-    
+
     fScaledHeight = floor(g_strctStimulusServer.m_aiScreenSize(4) * fScale);
     fScaledWidth =  floor(g_strctStimulusServer.m_aiScreenSize(3) * fScale);
  end
 
-    
+
   g_strctPTB.m_fScale = fScale;
   g_strctPTB.m_fScaledHeight = fScaledHeight;
   g_strctPTB.m_fScaledWidth = fScaledWidth;
@@ -1320,7 +1318,7 @@ else
      aiMatlabFigRect(2)+iPTBOffsetY,...
      aiMatlabFigRect(1)+fAvailWidth,...
      aiMatlabFigRect(2)+fAvailHeight];
- 
+
 fnLog('Starting PTB Screen');
 drawnow
 if isfield(g_strctGUIParams,'m_fDebug') && g_strctGUIParams.m_fDebug == 1
@@ -1328,7 +1326,7 @@ if isfield(g_strctGUIParams,'m_fDebug') && g_strctGUIParams.m_fDebug == 1
         aiMatlabFigRect(2)+iPTBOffsetY,...
         aiMatlabFigRect(1)+fAvailWidth,...
         aiMatlabFigRect(2)+fAvailHeight];
-    
+
     [g_strctPTB.m_hWindow, g_strctPTB.m_aiRect] = Screen(    'OpenWindow',g_strctPTB.m_iScreenIndex,[0 0 0],g_strctPTB.m_aiScreenRect);
 else
           [g_strctPTB.m_hWindow, g_strctPTB.m_aiRect] = Screen(    'OpenWindow',g_strctPTB.m_iScreenIndex,[0 0 0],g_strctPTB.m_aiScreenRect);
@@ -1352,7 +1350,7 @@ return;
 
 
 function fnStartRecordingCallback(hObject,b)
-global  g_bRecording        
+global  g_bRecording
 if ~g_bRecording
     fnStartRecording(0.2);
 else
@@ -1366,7 +1364,7 @@ global g_strctAppConfig g_iCurrParadigm g_handles
 bOK = fnSetupConnectionToStimulusServer(...
         g_strctAppConfig.m_strctStimulusServer.m_strAddress,...
         g_strctAppConfig.m_strctStimulusServer.m_fPort);
-    
+
 if bOK
     % Emulate a switch into the paradigm. This should initialize things on
     % the other end....
