@@ -1,0 +1,39 @@
+24-Feb-2016 15:36:48:322 Starting Kofiko...
+24-Feb-2016 15:36:48:326 Initializing Data Acqusition Card...
+24-Feb-2016 15:36:48:813 Using PTB toolbox version: 3.0.11
+24-Feb-2016 15:36:48:954 Starting PTB Screen
+24-Feb-2016 15:36:54:771 Initializing Paradigm Default
+24-Feb-2016 15:36:54:809 Switching to paradigm Default
+24-Feb-2016 15:36:54:820 Finite state machine of Default is running, starting from state 0
+24-Feb-2016 15:37:33:531 Closing juice valve
+24-Feb-2016 15:37:33:578 Clearing screen
+24-Feb-2016 15:37:33:581 Initializing Paradigm Touch Pic Training
+24-Feb-2016 15:37:33:638 Switching to paradigm Touch Pic Training
+24-Feb-2016 15:37:33:639 Finite state machine of Touch Pic Training is running, starting from state 0
+24-Feb-2016 15:37:34:626 Starting Touch Pic Training paradigm
+24-Feb-2016 15:37:44:248 Closing juice valve
+24-Feb-2016 15:37:44:250 Clearing screen
+24-Feb-2016 15:37:44:251 Initializing Stimulus Server for new paradigm
+24-Feb-2016 15:37:44:302 Finished initializing Stimulus Server for new paradigm
+24-Feb-2016 15:37:44:303 Switching to paradigm Default
+24-Feb-2016 15:37:44:303 Finite state machine of Default is running, starting from state 0
+24-Feb-2016 15:37:45:606 Starting Default paradigm
+24-Feb-2016 15:37:50:874 Closing juice valve
+24-Feb-2016 15:37:50:927 Clearing screen
+24-Feb-2016 15:37:50:928 Initializing Stimulus Server for new paradigm
+24-Feb-2016 15:37:50:930 Finished initializing Stimulus Server for new paradigm
+24-Feb-2016 15:37:50:931 Switching to paradigm Default
+24-Feb-2016 15:37:50:931 Finite state machine of Default is running, starting from state 1
+24-Feb-2016 15:37:51:672 Starting Default paradigm
+24-Feb-2016 15:37:51:675 Resuming Default paradigm
+24-Feb-2016 15:37:57:953 Stopping Paradigm
+24-Feb-2016 15:37:57:954 Shutting down
+24-Feb-2016 15:37:57:956 Closing juice valve
+24-Feb-2016 15:37:57:957 Clearing screen
+24-Feb-2016 15:37:57:959 Exitting Kofiko
+24-Feb-2016 15:37:57:967 Closing local PTB Screen
+24-Feb-2016 15:37:58:257 Writing information to disk...
+24-Feb-2016 15:37:58:260 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160224_153644_Anakin.mat
+24-Feb-2016 15:37:58:518 Data Saved!
+24-Feb-2016 15:37:58:518 Closing connection to stimulus server
+24-Feb-2016 15:37:58:522 Closing connection to real time stat server

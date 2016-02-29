@@ -1,0 +1,13 @@
+24-Feb-2016 15:40:13:971 Starting Kofiko...
+24-Feb-2016 15:40:13:977 Initializing Data Acqusition Card...
+24-Feb-2016 15:40:14:392 Using PTB toolbox version: 3.0.11
+24-Feb-2016 15:40:14:546 Starting PTB Screen
+24-Feb-2016 15:40:22:743 Initializing Paradigm Default
+24-Feb-2016 15:40:22:790 Switching to paradigm Default
+24-Feb-2016 15:40:22:802 Finite state machine of Default is running, starting from state 0
+24-Feb-2016 15:40:31:939 Closing juice valve
+24-Feb-2016 15:40:31:971 Clearing screen
+24-Feb-2016 15:40:31:973 Initializing Paradigm Touch Shapes
+24-Feb-2016 15:40:32:024 Switching to paradigm Touch Shapes
+24-Feb-2016 15:40:32:026 Finite state machine of Touch Shapes is running, starting from state 0
+24-Feb-2016 15:40:33:830 Starting Touch Shapes paradigm

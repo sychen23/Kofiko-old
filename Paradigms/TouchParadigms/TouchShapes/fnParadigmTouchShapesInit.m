@@ -23,7 +23,6 @@ g_strctParadigm = fnTsAddVar(g_strctParadigm, 'CorrectDistancePix', g_strctParad
 g_strctParadigm = fnTsAddVar(g_strctParadigm, 'MaxNumTrials', g_strctParadigm.m_fInitial_MaxNumTrials, iSmallBuffer);
 g_strctParadigm = fnTsAddVar(g_strctParadigm, 'SpotRadius', g_strctParadigm.m_fInitial_SpotRadius, iSmallBuffer);
 g_strctParadigm = fnTsAddVar(g_strctParadigm, 'ShapeRadius', g_strctParadigm.m_fInitial_ShapeRadius, iSmallBuffer);
-g_strctParadigm = fnTsAddVar(g_strctParadigm, 'ImageName', g_strctParadigm.m_fInitial_ImageName, iSmallBuffer);
 g_strctParadigm = fnTsAddVar(g_strctParadigm, 'PenaltySec', g_strctParadigm.m_fInitial_PenaltySec, iSmallBuffer);
 
 %%
@@ -32,6 +31,10 @@ g_strctParadigm.m_bMonkeyInitiatesTrials = g_strctParadigm.m_fInitial_MonkeyStar
 g_strctParadigm.m_bMultipleAttempts =  g_strctParadigm.m_fInitial_MultipleAttempts;
 g_strctParadigm.m_bToggleRandomOrder =  g_strctParadigm.m_fInitial_RandomOrder;
 g_strctParadigm.m_bRewardBoth =  g_strctParadigm.m_fInitial_RewardBoth;
+g_strctParadigm.m_fImageArray = ['circle.png'; 'square.png'];
+g_strctParadigm.m_fImageCellArray = cellstr(g_strctParadigm.m_fImageArray);
+disp(g_strctParadigm.m_fImageCellArray);
+
 
 if ~isempty(g_strctParadigm.m_strCorrectTrialSoundFile) && exist(g_strctParadigm.m_strCorrectTrialSoundFile,'file')
     g_strctParadigm.m_afCorrectSound = wavread(g_strctParadigm.m_strCorrectTrialSoundFile);

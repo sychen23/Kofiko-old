@@ -1,0 +1,24 @@
+24-Feb-2016 16:27:26:102 Starting Kofiko...
+24-Feb-2016 16:27:26:103 Initializing Data Acqusition Card...
+24-Feb-2016 16:27:26:289 Using PTB toolbox version: 3.0.11
+24-Feb-2016 16:27:26:377 Starting PTB Screen
+24-Feb-2016 16:27:33:325 Initializing Paradigm Default
+24-Feb-2016 16:27:33:360 Switching to paradigm Default
+24-Feb-2016 16:27:33:362 Finite state machine of Default is running, starting from state 0
+24-Feb-2016 16:28:46:773 Closing juice valve
+24-Feb-2016 16:28:46:802 Clearing screen
+24-Feb-2016 16:28:46:803 Initializing Paradigm Touch Shapes
+24-Feb-2016 16:28:46:839 Switching to paradigm Touch Shapes
+24-Feb-2016 16:28:46:839 Finite state machine of Touch Shapes is running, starting from state 0
+24-Feb-2016 16:28:48:725 Starting Touch Shapes paradigm
+24-Feb-2016 16:29:14:513 Stopping Paradigm
+24-Feb-2016 16:29:14:514 Shutting down
+24-Feb-2016 16:29:14:516 Closing juice valve
+24-Feb-2016 16:29:14:519 Clearing screen
+24-Feb-2016 16:29:14:521 Exitting Kofiko
+24-Feb-2016 16:29:14:524 Closing local PTB Screen
+24-Feb-2016 16:29:14:821 Writing information to disk...
+24-Feb-2016 16:29:14:822 Writing all paradigms to C:\Users\gilbertlab\Desktop\Kofiko\Log\160224_162723_Anakin.mat
+24-Feb-2016 16:29:15:081 Data Saved!
+24-Feb-2016 16:29:15:081 Closing connection to stimulus server
+24-Feb-2016 16:29:15:082 Closing connection to real time stat server
